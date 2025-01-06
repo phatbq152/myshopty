@@ -83,6 +83,7 @@ production:
     <<: *default
     database: phatsite_production
     username: phatsite
+    url: <%= ENV['DATABASE_URL'] %>
     password: <%= ENV["PHATSITE_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
