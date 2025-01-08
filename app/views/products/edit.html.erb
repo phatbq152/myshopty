@@ -1,4 +1,37 @@
-<h1>Edit product</h1>
+<h1 style="
+  text-align: left; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 32px; 
+  color: #2a9d8f; /* Xanh ngọc đậm */
+  margin-bottom: 20px; 
+  text-shadow: 1px 1px 2px #ddd;">
+  Edit Product
+</h1>
 
-<%= render "form", product: @product %>
-<%= link_to "Cancel", @product %>
+<div style="
+  padding: 20px; 
+  background-color: #f0fdf4; /* Xanh nhạt */
+  border-radius: 12px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;">
+  <%= render "form", product: @product %>
+</div>
+
+<div style="
+  display: flex; 
+  gap: 10px; 
+  margin-top: 20px;">
+  <!-- Nút Cancel -->
+  <%= link_to "❌ Cancel", @product, style: "
+    display: inline-block; 
+    background-color: #e76f51; /* Cam đậm */
+    color: white; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    font-size: 14px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease-in-out;" %>
+</div>
+

@@ -1,10 +1,79 @@
  
- <h1><%= @product.name %></h1>
-<%= @product.description %>
-    
+<h1 style="
+text-align: left; 
+font-family: 'Arial', sans-serif; 
+font-size: 32px; 
+color: #2a9d8f; /* Xanh ngọc đậm */
+margin-bottom: 10px; 
+text-shadow: 1px 1px 2px #ddd;">
+<%= @product.name %>
+</h1>
 
-<%= link_to "Back", products_path %>
-<%= link_to "Edit", edit_product_path(@product) %>
-<%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-<%= image_tag @product.featured_image if @product.featured_image.attached? %>
+<p style="
+font-family: 'Arial', sans-serif; 
+font-size: 18px; 
+color: #264653; /* Xanh đậm */
+margin-bottom: 20px; 
+line-height: 1.6;">
+<%= @product.description %>
+</p>
+
+<% if @product.featured_image.attached? %>
+<div style="
+  text-align: center; 
+  margin-bottom: 20px;">
+  <%= image_tag @product.featured_image, style: "
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" %>
+</div>
+<% end %>
+
+<div style="
+display: flex; 
+gap: 10px; 
+margin-top: 20px;">
+<!-- Nút Back -->
+<%= link_to "🔙 Back", products_path, style: "
+  display: inline-block; 
+  background-color: #b3cde0; /* Xanh nhạt */
+  color: white; 
+  padding: 10px 20px; 
+  text-decoration: none; 
+  border-radius: 8px; 
+  font-weight: bold; 
+  font-size: 14px; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease-in-out;" %>
+
+<!-- Nút Edit -->
+<%= link_to "✏️ Edit", edit_product_path(@product), style: "
+  display: inline-block; 
+  background-color: #4db8ff; /* Xanh nhạt */
+  color: white; 
+  padding: 10px 20px; 
+  text-decoration: none; 
+  border-radius: 8px; 
+  font-weight: bold; 
+  font-size: 14px; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease-in-out;" %>
+
+<!-- Nút Delete -->
+<%= button_to "🗑️ Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, style: "
+  display: inline-block; 
+  background-color: #e76f51; /* Cam đậm */
+  color: white; 
+  padding: 10px 20px; 
+  text-decoration: none; 
+  border: none; 
+  border-radius: 8px; 
+  font-weight: bold; 
+  font-size: 14px; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  cursor: pointer; 
+  transition: background-color 0.3s ease-in-out;" %>
+</div>
+
 

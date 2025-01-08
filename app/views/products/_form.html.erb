@@ -1,19 +1,61 @@
-<%= form_with model: product do |form| %>
-  <%# ... %>
-  <div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
-  </div>
-  <div>
-    <%= form.label :featured_image, style: "display: block" %>
-    <%= form.file_field :featured_image, accept: "image/*" %>
+<%= form_with model: product, local: true, html: { style: "margin: 0 auto; max-width: 600px; padding: 20px; background-color: #f9fafb; border-radius: 12px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" } do |form| %>
+  <!-- Tiêu đề form -->
+  <h2 style="
+    text-align: center; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 28px; 
+    color: #2a9d8f; /* Xanh ngọc đậm */
+    margin-bottom: 20px; 
+    text-shadow: 1px 1px 2px #ddd;">
+    Product Form
+  </h2>
+
+  <!-- Tên sản phẩm -->
+  <div style="margin-bottom: 20px;">
+    <%= form.label :name, "Product Name", style: "display: block; font-weight: bold; margin-bottom: 5px; color: #264653;" %>
+    <%= form.text_field :name, style: "
+      width: 100%; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      font-size: 16px;" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <!-- Mô tả sản phẩm -->
+  <div style="margin-bottom: 20px;">
+    <%= form.label :description, "Product Description", style: "display: block; font-weight: bold; margin-bottom: 5px; color: #264653;" %>
+    <%= form.rich_text_area :description, style: "
+      width: 100%; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      font-size: 16px;" %>
+  </div>
+
+  <!-- Ảnh nổi bật -->
+  <div style="margin-bottom: 20px;">
+    <%= form.label :featured_image, "Featured Image", style: "display: block; font-weight: bold; margin-bottom: 5px; color: #264653;" %>
+    <%= form.file_field :featured_image, accept: "image/*", style: "
+      display: block; 
+      margin-top: 5px; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      font-size: 16px;" %>
+  </div>
+
+  <!-- Nút Submit -->
+  <div style="text-align: center;">
+    <%= form.submit "Save Product", style: "
+      background-color: #2a9d8f; /* Xanh ngọc */
+      color: white; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      font-weight: bold; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      transition: background-color 0.3s ease-in-out;" %>
   </div>
 <% end %>
+
