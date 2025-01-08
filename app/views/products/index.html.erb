@@ -1,9 +1,49 @@
-<h1>Products</h1>
-<%= link_to "New product", new_product_path %>
-<div id="products">
+<h1 style="
+  text-align: left; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 32px; 
+  color: #2a9d8f; /* Xanh ngọc đậm */
+  margin-bottom: 10px; 
+  text-shadow: 1px 1px 2px #ddd;">
+  Products
+</h1>
+
+<div style="text-align: left; margin-bottom: 20px;">
+  <%= link_to "➕ New product", new_product_path, style: "
+    display: inline-block; 
+    background-color: #f4a261; /* Cam nhạt */
+    color: white; 
+    padding: 8px 15px; 
+    text-decoration: none; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    font-size: 14px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease-in-out;" %>
+</div>
+
+<div id="products" style="
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ô sản phẩm nhỏ hơn nữa */
+  gap: 10px; 
+  padding: 15px; 
+  background-color: #edf2f4; /* Xám nhạt */
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
   <% @products.each do |product| %>
-    <div>
-    <%= link_to product.name, product %>
+    <div style="
+      text-align: center; 
+      padding: 8px; /* Giảm padding để ô nhỏ gọn hơn */
+      border: 1px solid #e76f51; /* Cam đậm */
+      border-radius: 6px; /* Giảm bán kính bo góc */
+      background-color: #ffffff; /* Trắng */
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;">
+      <%= link_to product.name, product, style: "
+        text-decoration: none; 
+        color: #e76f51; /* Cam đậm */
+        font-size: 14px; /* Giảm kích thước chữ */
+        font-weight: bold;" %>
     </div>
   <% end %>
 </div>

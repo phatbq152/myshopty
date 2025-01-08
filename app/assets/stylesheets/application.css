@@ -1,10 +1,72 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body {
+    font-family: "Poppins", Arial, Helvetica, sans-serif; /* Font hiện đại hơn */
+    padding: 1.5rem;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Màu nền nhã nhặn */
+    color: #333; /* Màu chữ tối cho dễ đọc */
+  }
+  
+  nav {
+    justify-content: flex-end;
+    display: flex;
+    font-size: 0.875em;
+    gap: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff; /* Nền trắng nổi bật */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng nổi */
+  }
+  
+  nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff; /* Màu xanh đẹp mắt */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt */
+  }
+  
+  nav a:hover {
+    background-color: #007bff;
+    color: #fff; /* Đổi màu khi hover */
+  }
+  
+  main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .notice {
+    color: #28a745; /* Màu xanh lá tươi sáng */
+    font-weight: bold;
+    background-color: #e9fbe8; /* Nền xanh nhạt */
+    padding: 1rem;
+    border-radius: 4px;
+  }
+  
+  section.product {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng nổi */
+  }
+  
+  section.product img {
+    border-radius: 8px;
+    flex-basis: 50%;
+    max-width: 50%;
+    transition: transform 0.3s ease; /* Hiệu ứng hover */
+  }
+  
+  section.product img:hover {
+    transform: scale(1.05); /* Zoom nhẹ khi hover */
+  }
+  
+    
