@@ -8,6 +8,7 @@
   Products
 </h1>
 
+<% if user_signed_in? %>
 <div style="text-align: left; margin-bottom: 20px;">
   <%= link_to "➕ New product", new_product_path, style: "
     display: inline-block; 
@@ -21,6 +22,7 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s ease-in-out;" %>
 </div>
+<% end %>
 
 <div id="products" style="
   display: grid; 

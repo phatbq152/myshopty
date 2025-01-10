@@ -47,6 +47,7 @@ margin-top: 20px;">
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
   transition: background-color 0.3s ease-in-out;" %>
 
+<% if user_signed_in? %>
 <!-- Nút Edit -->
 <%= link_to "✏️ Edit", edit_product_path(@product), style: "
   display: inline-block; 
@@ -59,7 +60,9 @@ margin-top: 20px;">
   font-size: 14px; 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
   transition: background-color 0.3s ease-in-out;" %>
+<% end %>
 
+<% if user_signed_in? %>
 <!-- Nút Delete -->
 <%= button_to "🗑️ Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, style: "
   display: inline-block; 
@@ -75,5 +78,6 @@ margin-top: 20px;">
   cursor: pointer; 
   transition: background-color 0.3s ease-in-out;" %>
 </div>
+<% end %>
 
 
